@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moePDF~ Doc to PDF Converter</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="grill-wrapper" id="grill">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>moePDF~</h1>
+                <p class="lead">
+		    Made for RapidFort Recruitment Drive<br>
+		    Size Limit: 1MB
+                </p>
+                <form enctype="multipart/form-data" method="post" action="/upload">
+		    <input type="file" name="file" id="upload-file" accept=".odt, .docx, .doc" style="display: none;" onchange="handleFileSelect()" />
+		    <button id="btn" type="button">Upload Document</button>
+                    <input type="submit" id="submit-btn" value="Submit" style="display: none;" >
+                </form>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://uguu.se">Design Inspiration~</a></li>
+                    <li><a href="api.html">API</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="https://github.com/thunderbolt004">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>    
+
+    <script>
+        document.getElementById('btn').onclick = function() {
+            document.getElementById('upload-file').click();
+        };
+        function handleFileSelect() {
+	    document.getElementById('btn').innerHTML = "Converting..";
+            document.getElementById('submit-btn').click();
+        };
+    </script>
+    <script async>
+        GRILLS = ["1","2","3","4","5","6","7","8","9","10"]
+        const randomGrill = GRILLS[Math.floor(Math.random() *  GRILLS.length)];
+        console.log(randomGrill)
+        const grillElement = document.getElementById("grill")
+        grillElement.style.setProperty('--avif-bg', `url('/static/img/grills/${randomGrill}.avif')`)
+    </script>
+</body>
+</html>

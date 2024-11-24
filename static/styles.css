@@ -1,0 +1,155 @@
+/**
+* USE BORDER BOX
+*/
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/**
+* PAGE LAYOUT
+*/
+body {
+    background-attachment: fixed;
+    background-color: #F7F7F7;
+    background-image: url('img/bg.png');
+    @supports (background-image: url('img/bg.avif')) {
+        background-image: url('img/bg.avif');
+    }
+    background-position: top left;
+    background-repeat: repeat;
+    color: #333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    padding-top: 15px;
+    text-shadow: 0 1px hsla(0, 0%, 100%, .5);
+    text-rendering: optimizelegibility;
+    height: 100vh;
+}
+
+.grill-wrapper {
+    --avif-bg: url('');
+    --png-bg: url('');
+    background-image: var(--png-bg);
+    @supports (background-image: var(--avif-bg)) {
+        background-image: var(--avif-bg);
+    }
+    background-attachment: fixed;
+    background-position: 85% 100%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+/**
+* ELEMENTS
+*/
+/* paragraphs */
+p {
+    margin: 0 0 10px;
+}
+
+/* links */
+a {
+    color: #0078B4;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #005580;
+}
+
+a:focus {
+    outline: thin dotted #333;
+}
+
+/**
+* JUMBOTRON
+*/
+.jumbotron {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    color: inherit;
+    font-family: inherit;
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 10px 0;
+    cursor: default;
+    text-rendering: optimizelegibility;
+}
+
+.jumbotron .lead {
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+
+.jumbotron #btn {
+    background: rgba(202, 230, 190, 0.75);
+    border: 1px solid #B7D1A0;
+    border-radius: 4px;
+    color: #468847;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 24px;
+    padding: 28px 48px;
+    transition: background-color 0.25s, width 0.5s, height 0.5s;
+    text-shadow: 0 1px hsla(0, 0%, 100%, .5);
+}
+
+.jumbotron #btn:hover,
+.jumbotron #btn:active,
+.jumbotron #btn:focus,
+.jumbotron #btn.drop {
+    background-color: rgb(188, 228, 170);
+    text-decoration: none;
+}
+
+/**
+* NAVIGATION LINKS
+*/
+nav {
+    padding-bottom: 30px;
+}
+
+nav > ul,
+nav a {
+    color: #167196;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+nav > ul > li:after {
+    content: "|";
+    margin: 0 8px;
+    opacity: 0.3;
+}
+
+nav > ul > li:last-child:after {
+    content: "";
+    margin: 0;
+}
